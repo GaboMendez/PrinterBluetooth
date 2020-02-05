@@ -1,5 +1,5 @@
 # PrinterBluetooth
-Xamarin Mobile App that is Implementing Bluetooth Printer Service
+Xamarin Mobile App that is implementing Bluetooth Printer Service
 
 ## Screenshots
 <p aling="center">
