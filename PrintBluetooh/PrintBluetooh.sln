@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintBluetooh", "PrintBluetooh\PrintBluetooh\PrintBluetooh.csproj", "{6BD15E93-869B-4A32-AB79-D296472E81AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintBluetooh.Android", "PrintBluetooh\PrintBluetooh.Android\PrintBluetooh.Android.csproj", "{94377ABA-E9A2-4FF3-A3F7-CBB13533797E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BD15E93-869B-4A32-AB79-D296472E81AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BD15E93-869B-4A32-AB79-D296472E81AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BD15E93-869B-4A32-AB79-D296472E81AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BD15E93-869B-4A32-AB79-D296472E81AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94377ABA-E9A2-4FF3-A3F7-CBB13533797E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94377ABA-E9A2-4FF3-A3F7-CBB13533797E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94377ABA-E9A2-4FF3-A3F7-CBB13533797E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{94377ABA-E9A2-4FF3-A3F7-CBB13533797E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94377ABA-E9A2-4FF3-A3F7-CBB13533797E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94377ABA-E9A2-4FF3-A3F7-CBB13533797E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {785B446B-E15D-45C8-86D1-594FBD88C5BF}
+	EndGlobalSection
+EndGlobal
