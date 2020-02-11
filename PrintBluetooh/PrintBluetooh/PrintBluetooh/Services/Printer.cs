@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Xamarin.Forms;
+using Xamarin.Forms; // Not Used
 
 namespace PrintBluetooh.Services
 {
     public class Printer
     {
-        private readonly IBluetoothService _blueToothService;
+        private IBluetoothService _blueToothService;
 
         public string MyPrinter { get; set; }
 
-        public Printer()
+        public Printer(IBluetoothService bluetoothService)
         {
-            _blueToothService = DependencyService.Get<IBluetoothService>();
+            //_blueToothService = DependencyService.Get<IBluetoothService>();
+            _blueToothService = bluetoothService;
         }
         public async Task LineFeed()
         {

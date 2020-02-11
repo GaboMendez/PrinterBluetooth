@@ -10,14 +10,14 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using Prism.Services;
-using Xamarin.Forms;
-using DependencyService = Xamarin.Forms.DependencyService;
+using Xamarin.Forms; // Not Used
+using DependencyService = Xamarin.Forms.DependencyService; // Not Used
 
 namespace PrintBluetooh.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
-        private readonly IBluetoothService _blueToothService;
+        private IBluetoothService _blueToothService;
         private Printer _printer;
 
         private IList<string> _deviceList;
@@ -63,13 +63,16 @@ namespace PrintBluetooh.ViewModels
 
         public DelegateCommand PrintCommand { get; set; }
 
-        public MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
+        public MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IBluetoothService bluetoothService)
             : base(navigationService, pageDialogService)
         {
+            //_blueToothService = DependencyService.Get<IBluetoothService>();
+
             Title = "Main Page";
             PrintMessage = "";
-            _blueToothService = DependencyService.Get<IBluetoothService>();
-            _printer = new Printer();
+            _blueToothService = bluetoothService;
+            _printer = new Printer(bluetoothService);
+
             BindDeviceList();
 
             PrintCommand = new DelegateCommand(async () =>
@@ -84,7 +87,6 @@ namespace PrintBluetooh.ViewModels
                     if (String.IsNullOrEmpty(PrintMessage))
                     {
                         await PageDialogService.DisplayAlertAsync("Field to Print can not be empty...", null, "Ok");
-
                     }
                     else
                     {
