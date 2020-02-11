@@ -20,8 +20,8 @@ namespace PrintBluetooh.ViewModels
         private IBluetoothService _blueToothService;
         private Printer _printer;
 
-        private IList<string> _deviceList;
-        public IList<string> DeviceList
+        private ObservableCollection<string> _deviceList;
+        public ObservableCollection<string> DeviceList
         {
             get
             {
@@ -35,31 +35,8 @@ namespace PrintBluetooh.ViewModels
             }
         }
 
-        private string _printMessage;
-        public string PrintMessage
-        {
-            get
-            {
-                return _printMessage;
-            }
-            set
-            {
-                _printMessage = value;
-            }
-        }
-
-        private string _selectedDevice;
-        public string SelectedDevice
-        {
-            get
-            {
-                return _selectedDevice;
-            }
-            set
-            {
-                _selectedDevice = value;
-            }
-        }
+        public string PrintMessage { get; set; }
+        public string SelectedDevice { get; set; }
 
         public DelegateCommand PrintCommand { get; set; }
 
@@ -126,7 +103,7 @@ namespace PrintBluetooh.ViewModels
             });
         }
 
-        void BindDeviceList()
+        private void BindDeviceList()
         {
             var list = _blueToothService.GetDeviceList();
             DeviceList.Clear();

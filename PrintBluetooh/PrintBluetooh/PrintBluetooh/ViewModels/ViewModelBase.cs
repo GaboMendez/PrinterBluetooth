@@ -3,22 +3,20 @@ using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using Prism.Services;
 
 namespace PrintBluetooh.ViewModels
 {
-    public class ViewModelBase : BindableBase, IInitialize, INavigationAware, IDestructible
+    public class ViewModelBase : INotifyPropertyChanged, IInitialize, INavigationAware, IDestructible
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         protected INavigationService NavigationService { get; private set; }
         protected IPageDialogService PageDialogService { get; private set; }
 
-        private string _title;
-        public string Title
-        {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
-        }
+        public string Title { get; set; }
 
         public ViewModelBase(INavigationService navigationService, IPageDialogService pageDialogService)
         {
